@@ -8,7 +8,7 @@ class main
 	public static void main(String[] args)
 	{
 
-		// 1
+	// 1
     	String stringVrednost = "Neki String";
     	System.out.println("1. Duzina Stringa: " + stringVrednost.length());
 
@@ -33,8 +33,8 @@ class main
         lista.add("jedaN");
         lista.add("Dva");
         lista.add("TRI");
-		lista.add("CeTiRi");
-		lista.add("pET");
+	lista.add("CeTiRi");
+	lista.add("pET");
         
         System.out.println("5. Lista Stringova u manja slova: " + uManjaSlova(lista));
         
@@ -151,7 +151,7 @@ class main
 	    } 
         
         // Brisanje razmaka izmedju reci i smanjenje slova
-	    okrenuto = okrenuto.replaceAll("\\s+","").toLowerCase();
+	okrenuto = okrenuto.replaceAll("\\s+","").toLowerCase();
         normalno = normalno.replaceAll("\\s+","").toLowerCase();
 
         //System.out.println(okrenuto);
