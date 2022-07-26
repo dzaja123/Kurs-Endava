@@ -6,4 +6,4 @@
 - Домаћи задатак 1 - Увод у Јаву
 - Домаћи задатак 2 - Увод у линковање
 - Домаћи задатак 3 - Увод у Selenium и TestNG
-- Домаћи задатак 4 - Page Object Model (Selenium и TestNG)
+- Домаћи задатак 4 - Page Object Model (POM)
