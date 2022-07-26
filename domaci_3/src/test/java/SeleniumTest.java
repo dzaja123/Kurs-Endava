@@ -14,7 +14,7 @@ public class SeleniumTest {
     @Test
     public void seleniumTest() {
 
-        System.setProperty("webdriver.chrome.driver", "D:\\Kurs_Testiranje_softvera\\domaci_3\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions().setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
 
@@ -28,7 +28,7 @@ public class SeleniumTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         WebElement singUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/header/div/div[2]/div[2]/a")));
 
