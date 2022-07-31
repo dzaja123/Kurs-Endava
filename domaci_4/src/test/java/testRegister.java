@@ -9,16 +9,19 @@ public class testRegister {
     String testPassword = "Nekarandomsifra123";
     WebDriver driver;
 
+    BasePage basePage;
+    RegisterPage registerPage;
+
     @BeforeMethod
     public void Setup(){
-        BasePage basePage = new BasePage(driver);
+        basePage = new BasePage(driver);
         basePage.startBrowser();
     }
 
     @Test
     public void Test(){
-        RegisterPage registerPage = new RegisterPage(driver);
-        BasePage basePage = new BasePage(driver);
+        registerPage = new RegisterPage(driver);
+        basePage = new BasePage(driver);
 
         basePage.isElementPresent(registerPage.getSingUpButton());
     }
