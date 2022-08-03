@@ -10,28 +10,28 @@ import java.time.Duration;
 
 public class TestBase {
 
-    public static RegisterPage setUpWebBrowser(String browser) {
+    public static WebDriver setUpWebBrowser(String browser) {
 
-        RegisterPage registerPage;
+        WebDriver driver;
 
         if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-            registerPage = new RegisterPage(new ChromeDriver());
+            driver = new ChromeDriver();
 
         }else if(browser.equalsIgnoreCase("firefox")){
             WebDriverManager.firefoxdriver().setup();
-            registerPage = new RegisterPage(new FirefoxDriver());
+            driver = new FirefoxDriver();
 
         }else if(browser.equalsIgnoreCase("brave")){
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
             ChromeOptions options = new ChromeOptions().setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
-            registerPage = new RegisterPage(new ChromeDriver(options));
+            driver = new ChromeDriver(options);
 
         }else {
             throw new RuntimeException();
         }
 
-        return registerPage;
+        return driver;
     }
 
     public static void webDriverWait(WebDriver driver, By locator) {
