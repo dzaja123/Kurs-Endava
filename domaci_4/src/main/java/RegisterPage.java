@@ -3,46 +3,22 @@ import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends BasePage{
     public RegisterPage(WebDriver driver) {
+
         super(driver);
     }
 
-    private By singUpButton = By.xpath("/html/body/div[1]/header/div/div[2]/div[2]/a");
+    private By singUpButton = By.xpath("//*[@id=\"top\"]/body/div[1]/header/div/div[2]/div[2]/a");
     private By emailField = By.id("email");
-    private By continueButtonEmail = By.xpath("/html/body/div[4]/main/div[2]/text-suggester/div[1]/form/div[1]/div[2]/button");
+    private By continueButtonEmail = By.xpath("//*[@id=\"email-container\"]/div[2]/button");
     private By passwordField = By.id("password");
-    private By continueButtonPassword = By.xpath("/html/body/div[4]/main/div[2]/text-suggester/div[1]/form/div[2]/div[2]/button");
-    private String TEST_URL = "https://github.com";
+    private By continueButtonPassword = By.xpath("//*[@id=\"password-container\"]/div[2]/button");
 
-    public By getSingUpButton() {
+    private By usernameField = By.id("login");
 
-        return singUpButton;
-    }
+    private By continueButtonUsername = By.xpath("//*[@id=\"username-container\"]/div[2]/button");
 
-    public By getEmailField() {
-
-        return emailField;
-    }
-
-    public By getContinueButtonEmail() {
-
-        return continueButtonEmail;
-    }
-
-    public By getPasswordField() {
-
-        return passwordField;
-    }
-
-    public By getContinueButtonPassword() {
-
-        return continueButtonPassword;
-    }
-
-    public void openWebPage() {
-        driver.manage().window().maximize();
-        driver.get(TEST_URL);
-    }
     public void insertEmailInTextField(String email) {
+
         typeTextOnElement(emailField, email);
     }
 
@@ -51,10 +27,14 @@ public class RegisterPage extends BasePage{
         typeTextOnElement(passwordField, password);
     }
 
-    public void insertEmailAndPassword(String email, String password) {
+    public void insertUsernameInTheField(String username){
 
-        waitForElementToBeClickable(getSingUpButton());
-        clickOnButton(getSingUpButton());
+        typeTextOnElement(usernameField, username);
+    }
+
+    public void insertEmailAndPasswordAndUsername(String email, String password, String username) {
+
+        clickOnButton(singUpButton);
 
         insertEmailInTextField(email);
 
@@ -63,5 +43,10 @@ public class RegisterPage extends BasePage{
         insertPasswordInTextField(password);
 
         clickOnButton(continueButtonPassword);
+
+        insertUsernameInTheField(username);
+
+        clickOnButton(continueButtonUsername);
     }
+
 }
